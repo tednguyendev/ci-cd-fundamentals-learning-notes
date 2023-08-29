@@ -1,0 +1,129 @@
+### [DevOps Foundations: Continuous Integration and Continuous Delivery](https://app.pluralsight.com/library/courses/devops-foundations-continuous-integration-continuous-delivery) (Pluralsight)
+- Benefits
+	- Build and see the see the result fast is better, reduce feedback loop
+- Automation > Manual
+	- Not only because human are prone to error, but also because there are many variables, many diffs between each time we deploy something. That diff better be automated.
+- Just like how manual testing enable a lot of other sub-product benefit, automation CI CD can also enable of a lot more benefits that we didn't thought of on the beginning, like better dev exp, ...
+- CI
+	- Is a development practice that requires developers to integrate code into a shared repository several times a day.
+	- All developers check in their code at least once a day, so we can make sure that everything still compiles and all of the tests still succeed.
+	- In short, it's just:
+		- Plz merge code frequently
+		- The workflows
+			- ![](Attachments/CleanShot%202023-08-24%20at%2011.02.41@2x.png)
+			- Which will test, build, compile, and things, except deploy
+- CDelivery
+	- Is a software development principle where software can be released to production at any time.
+	- In short, it is tools like the capsitrano
+- CDelivery vs CDeployment
+	- CDelivery
+		- Software can be deployed to production any time
+	- CDeployment
+		- Software is automatically deployed to production all the time
+- Full flow
+	- ![](Attachments/CleanShot%202023-08-24%20at%2011.09.12@2x.png)
+	- ![](Attachments/CleanShot%202023-08-24%20at%2011.09.45@2x.png)
+- Deployment types
+	- Blue-green
+		- ![](Attachments/CleanShot%202023-08-24%20at%2011.13.40@2x.png)
+	- Canary
+		- ![](Attachments/CleanShot%202023-08-24%20at%2011.14.09@2x.png)
+	- Feature Flag
+		- ![](Attachments/CleanShot%202023-08-24%20at%2011.14.44@2x.png)
+		- ![](Attachments/CleanShot%202023-08-24%20at%2011.15.03@2x.png)
+	- GitOps
+		- ![](Attachments/CleanShot%202023-08-24%20at%2011.16.11@2x.png)
+- Whatever branches you create, make sure that it results in a common branch used by all and everybody commits to it daily.
+	- A common pitfall here is that organizations create many branches for all sorts of things like separate features or versions of the software.
+		- This can work, but only when they are treated as main branches, meaning that everyone commits to them daily.
+		- Otherwise, the benefits of continuous integration go away, as you would have to do a big manual integration anyway. 
+### [Testing Automation: The Big Picture](https://app.pluralsight.com/library/courses/testing-automation-big-picture/) (Pluralsight)
+- Benefits
+	- ![](Attachments/CleanShot%202023-08-24%20at%2014.35.35@2x.png)
+- The cost increase
+	- ![](Attachments/CleanShot%202023-08-24%20at%2014.37.46@2x.png)
+	- ![](Attachments/CleanShot%202023-08-24%20at%2014.38.18@2x.png)
+- Why cost increase
+	- ![](Attachments/CleanShot%202023-08-24%20at%2014.39.21@2x.png)
+- UnitTest
+	- ![](Attachments/CleanShot%202023-08-24%20at%2017.06.34@2x.png)
+	- A unit test can be something than spans over a class or a file. As long as it work together as a coherent unit of behavior
+		- ![](Attachments/CleanShot%202023-08-24%20at%2017.08.03@2x.png)
+	- Suppose we have unit A, B. Unit A has file A1 A2 A3, unit B has file B1 B2 B3. Test one time 3 files A1 A2 A3 can still be a unit test. But test A and B is integration test. And A to C is integration test.
+- Integration test
+	- When multi unit of behaviors work together
+- But still, integration and unit test is subjective on each team.
+	- If connect external resource, can not be considerated as unit test anymore
+- Subcutaneous test
+	- ![](Attachments/CleanShot%202023-08-24%20at%2017.13.11@2x.png)
+- Comparasation
+	- Scope
+		- ![](Attachments/CleanShot%202023-08-24%20at%2017.13.44@2x.png)
+	- Dimension
+		- ![](Attachments/CleanShot%202023-08-24%20at%2017.18.10@2x.png)
+- Functional User Interface Test
+	- ![](Attachments/CleanShot%202023-08-24%20at%2017.17.18@2x.png)
+- Good amount of test
+	- ![](Attachments/CleanShot%202023-08-24%20at%2017.31.43@2x.png)
+- Exploratory Testing
+	- ![](Attachments/CleanShot%202023-08-25%20at%2017.46.08@2x.png)
+	- ![](Attachments/CleanShot%202023-08-25%20at%2010.05.45@2x.png)
+- Have callbacks
+	- ![](Attachments/CleanShot%202023-08-29%20at%2011.44.43@2x.png)
+- Docker setup
+	- Add credentials
+		- ![](Attachments/CleanShot%202023-08-29%20at%2011.52.55@2x.png)
+	- Add stage
+		- ![](Attachments/CleanShot%202023-08-29%20at%2011.53.54@2x.png)
+	- Run Jenkins
+		- ![](Attachments/CleanShot%202023-08-29%20at%2011.56.15@2x.png)
+	- Then have a new container
+		- ![](Attachments/CleanShot%202023-08-29%20at%2011.55.57@2x.png)
+### [Building a Modern CI/CD Pipeline with Jenkins](https://app.pluralsight.com/library/courses/building-modern-ci-cd-pipeline-jenkins) (Pluralsight)
+- Jenkins terms
+	- ![](Attachments/CleanShot%202023-08-28%20at%2009.37.21@2x.png)
+	- ![](Attachments/CleanShot%202023-08-28%20at%2017.37.31@2x.png)
+	- If a stage fails, the nexts not run
+- Steps
+	- Setup
+		- Get Github Personal token
+		- Add Github server
+			- ![](Attachments/CleanShot%202023-08-28%20at%2010.50.50@2x.png)
+			- ![](Attachments/CleanShot%202023-08-28%20at%2010.51.34@2x.png)
+		- Add Jenkin Plugin(if not have)
+			- ![](Attachments/CleanShot%202023-08-28%20at%2010.52.42@2x.png)
+- Can run the script on Jenkin web too:
+	- ![](Attachments/CleanShot%202023-08-28%20at%2017.47.33@2x.png)
+- Can execute other languages:
+	- ![](Attachments/CleanShot%202023-08-28%20at%2017.49.05@2x.png)
+	- ![](Attachments/CleanShot%202023-08-28%20at%2017.49.46@2x.png)
+- Instead of run Jenkin script in web, we can put it in our code:
+	- ![](Attachments/CleanShot%202023-08-28%20at%2017.50.32@2x.png)
+	- ![](Attachments/CleanShot%202023-08-28%20at%2017.52.21@2x.png)
+- Have variables like Github:
+	- ![](Attachments/CleanShot%202023-08-28%20at%2017.51.33@2x.png)
+- Run docker by using Jenkin:
+	- ![](Attachments/CleanShot%202023-08-28%20at%2017.59.53@2x.png)
+- Jenkin and Github actions
+	- Jenkin can work on personal server
+	- Github Action use yml, Jenkin use its own syntax
+	- When using GitHub Actions, you are essentially bound to Github’s source code management platform
+- Jenken looks neat
+	- ![](Attachments/CleanShot%202023-08-29%20at%2011.41.01@2x.png)
+- Support parallel
+	- ![](Attachments/CleanShot%202023-08-29%20at%2012.24.14@2x.png)
+	- ![](Attachments/CleanShot%202023-08-29%20at%2012.26.17@2x.png)
+- Conditional running
+	- ![](Attachments/CleanShot%202023-08-29%20at%2012.35.53@2x.png)
+	- ![](Attachments/CleanShot%202023-08-29%20at%2013.07.34@2x.png)
+- Input step
+	- Also conditional, but like, for the QAs to test and accept if test is allowed to deploy to production
+		- ![](Attachments/CleanShot%202023-08-29%20at%2012.39.06@2x.png)
+		- ![](Attachments/CleanShot%202023-08-29%20at%2012.55.32@2x.png)
+- Declarative vs scripted pipelines
+	- ![](Attachments/CleanShot%202023-08-29%20at%2013.05.15@2x.png)
+	- ![](Attachments/CleanShot%202023-08-29%20at%2013.05.23@2x.png)
+- Can import Groovy files and run
+	- ![](Attachments/CleanShot%202023-08-29%20at%2013.14.00@2x.png)
+### [Getting Started with GitHub Actions](https://app.pluralsight.com/library/courses/github-actions-getting-started) (Pluralsight)
+
