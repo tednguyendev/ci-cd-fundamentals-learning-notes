@@ -127,23 +127,23 @@
 	- ![](Attachments/CleanShot%202023-08-29%20at%2013.14.00@2x.png)
 ### [Getting Started with GitHub Actions](https://app.pluralsight.com/library/courses/github-actions-getting-started) (Pluralsight)
 - Have github action templates
-	- ![[CleanShot 2023-09-05 at 14.27.19@2x.png]]
+	- ![](Attachments/CleanShot%202023-09-05%20at%2014.27.19@2x.png)
 - Support many conditions to trigger a workflow
-	- ![[CleanShot 2023-09-05 at 15.09.40@2x.png]]
+	- ![](Attachments/CleanShot%202023-09-05%20at%2015.09.40@2x.png)
 - Github supporting 4 environments to run runners:
-	- ![[CleanShot 2023-09-05 at 15.15.47@2x.png]]
+	- ![](Attachments/CleanShot%202023-09-05%20at%2015.15.47@2x.png)
 - Github Free have 500MB storage, 2000 minutes running actions
 - Not all steps run actions, but all actions run as a step
 - `actions/checkout@v2`
 	- To just pull the repo
-	- ![[CleanShot 2023-09-05 at 16.04.05@2x.png]]
+	- ![](Attachments/CleanShot%202023-09-05%20at%2016.04.05@2x.png)
 - Github support to schedule to run actions or to call actions using APIs
 - Can specific types of events to run
-	- ![[CleanShot 2023-09-05 at 16.07.45@2x.png]]
+	- ![](Attachments/CleanShot%202023-09-05%20at%2016.07.45@2x.png)
 - Can use env `GITHUB_TOKEN` like this to interact with github APIs
-	- ![[CleanShot 2023-09-05 at 16.27.53@2x.png]]
+	- ![](Attachments/CleanShot%202023-09-05%20at%2016.27.53@2x.png)
 - Can run on many envs to test if our app works ok 
-	- ![[CleanShot 2023-09-08 at 13.14.32@2x.png]]
+	- ![](Attachments/CleanShot%202023-09-08%20at%2013.14.32@2x.png)
 - We can use artifacts to share between the tests(upload the artifacts then download the artifacts in later jobs)
 - Even have actions to add labels when PR is approved
-	- ![[CleanShot 2023-09-08 at 14.42.49@2x.png]]
+	- ![](Attachments/CleanShot%202023-09-08%20at%2014.42.49@2x.png)
