@@ -39,14 +39,29 @@
 		- Otherwise, the benefits of continuous integration go away, as you would have to do a big manual integration anyway. 
 ### [Testing Automation: The Big Picture](https://app.pluralsight.com/library/courses/testing-automation-big-picture/) (Pluralsight)
 - Benefits
-	- ![](Attachments/CleanShot%202023-08-24%20at%2014.35.35@2x.png)
+	- Free to run as often as required
+	- Run at any time
+	- Quicker
+	- Generally less error prone
+	- Automated test code in source control
+	- Creation and maintenance costs
 - The cost increase
 	- ![](Attachments/CleanShot%202023-08-24%20at%2014.37.46@2x.png)
 	- ![](Attachments/CleanShot%202023-08-24%20at%2014.38.18@2x.png)
-- Why cost increase
-	- ![](Attachments/CleanShot%202023-08-24%20at%2014.39.21@2x.png)
-- UnitTest
-	- ![](Attachments/CleanShot%202023-08-24%20at%2017.06.34@2x.png)
+	- Flow when detect bugs in:
+		- Development
+			- Detect
+			- Review
+			- Fix
+			- Tests pass
+		- Production
+			- Error occure
+			- Monitor, detect, view logs, tracing
+			- Find location
+			- Fix
+			- Test in dev
+			- Release production
+	- "it's a situational thing - the team decides what makes sense to be a unit for the purposes of their understanding of the system and its testing" - Martin Fowler
 	- A unit test can be something than spans over a class or a file. As long as it work together as a coherent unit of behavior
 		- ![](Attachments/CleanShot%202023-08-24%20at%2017.08.03@2x.png)
 	- Suppose we have unit A, B. Unit A has file A1 A2 A3, unit B has file B1 B2 B3. Test one time 3 files A1 A2 A3 can still be a unit test. But test A and B is integration test. And A to C is integration test.
@@ -55,21 +70,35 @@
 - But still, integration and unit test is subjective on each team.
 	- If connect external resource, can not be considerated as unit test anymore
 - Subcutaneous test
-	- ![](Attachments/CleanShot%202023-08-24%20at%2017.13.11@2x.png)
+	- Just below the surface of the UI
+	- Can test all the non-UI components working together
+	- Potentially quicker than automated UI tests
+	- Difficult to test UI
+	- Doesn't test logic coded into the UI
 - Comparasation
 	- Scope
 		- ![](Attachments/CleanShot%202023-08-24%20at%2017.13.44@2x.png)
 	- Dimension
 		- ![](Attachments/CleanShot%202023-08-24%20at%2017.18.10@2x.png)
 - Functional User Interface Test
-	- ![](Attachments/CleanShot%202023-08-24%20at%2017.17.18@2x.png)
+	- Testing as if we are end-user
+	- Manipulating UI elements (e.g. clicking buttons)
+	- "Full stack" testing
+	- Not testing look and feel
+	- Slow to execute
+	- Potentially brittle
 - Good amount of test
 	- ![](Attachments/CleanShot%202023-08-24%20at%2017.31.43@2x.png)
 - Exploratory Testing
-	- ![](Attachments/CleanShot%202023-08-25%20at%2017.46.08@2x.png)
-	- ![](Attachments/CleanShot%202023-08-25%20at%2010.05.45@2x.png)
-- Have callbacks
-	- ![](Attachments/CleanShot%202023-08-29%20at%2011.44.43@2x.png)
+	- Less up-front work required
+	- Intellectually stimulating
+	- Ideas for future features
+	- Disciplined
+	- Not "random"
+	- Freedom and accountability
+- Have callbacks like Rails (like `post` section):
+	- The post section defines one or more additional steps that are run upon the completion of a Pipeline’s or stage’s run (depending on the location of the post section within the Pipeline)
+	- [Ref](https://www.jenkins.io/doc/book/pipeline/syntax/)
 - Docker setup
 	- Add credentials
 		- ![](Attachments/CleanShot%202023-08-29%20at%2011.52.55@2x.png)
@@ -81,9 +110,17 @@
 		- ![](Attachments/CleanShot%202023-08-29%20at%2011.55.57@2x.png)
 ### [Building a Modern CI/CD Pipeline with Jenkins](https://app.pluralsight.com/library/courses/building-modern-ci-cd-pipeline-jenkins) (Pluralsight)
 - Jenkins terms
-	- ![](Attachments/CleanShot%202023-08-28%20at%2009.37.21@2x.png)
-	- ![](Attachments/CleanShot%202023-08-28%20at%2017.37.31@2x.png)
-	- If a stage fails, the nexts not run
+	- Pipeline
+		- A series of tasks required to build, test,
+	and deploy an application
+	- Agent
+		- Defines which Jenkins build agent should
+	run the pipeline
+	- Stage
+		- A section of the pipeline (Build, Test, etc.)
+		- If a stage fails, the nexts not run
+	- Step
+		- The specific instructions within a stage
 - Steps
 	- Setup
 		- Get Github Personal token
@@ -134,8 +171,8 @@
 	- ![](Attachments/CleanShot%202023-09-05%20at%2015.15.47@2x.png)
 - Github Free have 500MB storage, 2000 minutes running actions
 - Not all steps run actions, but all actions run as a step
-- `actions/checkout@v2`
-	- To just pull the repo
+- `actions/checkout@v2`: To pull the repository
+  - Which has the normal git steps:
 	- ![](Attachments/CleanShot%202023-09-05%20at%2016.04.05@2x.png)
 - Github support to schedule to run actions or to call actions using APIs
 - Can specific types of events to run
